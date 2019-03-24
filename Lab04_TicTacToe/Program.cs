@@ -22,8 +22,6 @@ namespace Lab04_TicTacToe
             Console.WriteLine("Player Two Enter A Name");
             string playerTwoName = Console.ReadLine();
 
-            Console.WriteLine($"Welcome {playerOneName} & {playerTwoName}");
-
             Classes.Player playerOne = new Classes.Player();
             playerOne.Marker = "X";
             playerOne.Name = playerOneName;

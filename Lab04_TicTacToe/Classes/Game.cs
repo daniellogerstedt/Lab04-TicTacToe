@@ -34,14 +34,16 @@ namespace Lab04_TicTacToe.Classes
             //DONE: Complete this method and utilize the rest of the class structure to play the game.
             Player currentPlayer = PlayerOne;
             int turnNumber = 1;
-
             Board.DisplayBoard();
+
+            Console.WriteLine();
 
             while (Winner == null && turnNumber < 10)
             {
                 turnNumber++;
                 currentPlayer.TakeTurn(Board);
                 Board.DisplayBoard();
+                Console.WriteLine();
                 bool winningTurn = CheckForWinner(Board);
                 if (winningTurn)
                 {
@@ -59,6 +61,7 @@ namespace Lab04_TicTacToe.Classes
             }
 
             Board.DisplayBoard();
+            Console.WriteLine();
             return Winner;
 
             /*

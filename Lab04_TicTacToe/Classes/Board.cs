@@ -23,6 +23,7 @@ namespace Lab04_TicTacToe.Classes
             int sizeOfRows = GameBoard.GetLength(1);
 
             //DONE: Output the board to the console
+            Console.Clear();
             
             for (int i = 0; i < numberOfRows; i++)
             {
