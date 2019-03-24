@@ -35,6 +35,8 @@ namespace Lab04_TicTacToe.Classes
             Player currentPlayer = PlayerOne;
             int turnNumber = 1;
 
+            Board.DisplayBoard();
+
             while (Winner == null && turnNumber < 10)
             {
                 turnNumber++;
