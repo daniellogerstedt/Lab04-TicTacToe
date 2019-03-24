@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab04_TicTacToe.Classes
 {
-	class Game
+	public class Game
 	{
 		public Player PlayerOne { get; set; }
 		public Player PlayerTwo { get; set; }
@@ -31,7 +31,49 @@ namespace Lab04_TicTacToe.Classes
 		public Player Play()
 		{
 
-			//TODO: Complete this method and utilize the rest of the class structure to play the game.
+            //DONE: Complete this method and utilize the rest of the class structure to play the game.
+            Player currentPlayer = PlayerOne;
+            int turnNumber = 1;
+            Board.DisplayBoard();
+
+            Console.WriteLine();
+
+            while (Winner == null && turnNumber < 10)
+            {
+                turnNumber++;
+
+                if (PlayerOne.IsTurn)
+                {
+                    currentPlayer = PlayerOne;
+                    PlayerOne.TakeTurn(Board);
+                }
+                if (PlayerTwo.IsTurn)
+                {
+                    currentPlayer = PlayerTwo;
+                    PlayerTwo.TakeTurn(Board);
+                }
+                Board.DisplayBoard();
+                Console.WriteLine();
+                bool winningTurn = CheckForWinner(Board);
+                if (winningTurn)
+                {
+                    Winner = currentPlayer;
+                }
+                if (currentPlayer.Equals(PlayerOne))
+                {
+                    currentPlayer = PlayerTwo;
+                }
+                else
+                {
+                    currentPlayer = PlayerOne;
+                }
+                SwitchPlayer();
+                
+            }
+
+            Board.DisplayBoard();
+            Console.WriteLine();
+            return Winner;
 
             /*
              * Complete this method by constructing the logic for the actual playing of Tic Tac Toe. 
@@ -82,8 +124,10 @@ namespace Lab04_TicTacToe.Classes
 				string b = Board.GameBoard[p2.Row, p2.Column];
 				string c = Board.GameBoard[p3.Row, p3.Column];
 
-				// TODO:  Determine a winner has been reached. 
-				// return true if a winner has been reached. 
+                // DONE:  Determine a winner has been reached. 
+                // return true if a winner has been reached.
+
+                if (a.Equals(b) && a.Equals(c)) return true;
 			
 			}
 
