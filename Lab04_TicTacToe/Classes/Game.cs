@@ -41,7 +41,17 @@ namespace Lab04_TicTacToe.Classes
             while (Winner == null && turnNumber < 10)
             {
                 turnNumber++;
-                currentPlayer.TakeTurn(Board);
+
+                if (PlayerOne.IsTurn)
+                {
+                    currentPlayer = PlayerOne;
+                    PlayerOne.TakeTurn(Board);
+                }
+                if (PlayerTwo.IsTurn)
+                {
+                    currentPlayer = PlayerTwo;
+                    PlayerTwo.TakeTurn(Board);
+                }
                 Board.DisplayBoard();
                 Console.WriteLine();
                 bool winningTurn = CheckForWinner(Board);
@@ -57,6 +67,7 @@ namespace Lab04_TicTacToe.Classes
                 {
                     currentPlayer = PlayerOne;
                 }
+                SwitchPlayer();
                 
             }
 
