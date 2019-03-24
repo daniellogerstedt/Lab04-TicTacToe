@@ -16,7 +16,9 @@ namespace Lab04_TicTacToe.Classes
 			{"7", "8", "9"},
 		};
 
-
+        /// <summary>
+        /// Displays the current status of the board by writing it to the console line by line. Formats the board so that it is readable.
+        /// </summary>
 		public void DisplayBoard()
 		{
             int numberOfRows = GameBoard.GetLength(0);

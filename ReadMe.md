@@ -40,3 +40,4 @@ Then select and open ```Lab04_TicTacToe.sln```
 ## Change Log
 1.0: Initial release, includes ability to play the game and see who the winner is afterward.
 1.0.1: Fixed bug that caused already selected spaces to skip players turns.
+1.0.2: Added summary comments to methods that were missing them.
