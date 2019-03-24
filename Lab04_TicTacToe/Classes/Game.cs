@@ -31,7 +31,33 @@ namespace Lab04_TicTacToe.Classes
 		public Player Play()
 		{
 
-			//TODO: Complete this method and utilize the rest of the class structure to play the game.
+            //DONE: Complete this method and utilize the rest of the class structure to play the game.
+            Player currentPlayer = PlayerOne;
+            int turnNumber = 1;
+
+            while (Winner == null && turnNumber < 10)
+            {
+                turnNumber++;
+                currentPlayer.TakeTurn(Board);
+                Board.DisplayBoard();
+                bool winningTurn = CheckForWinner(Board);
+                if (winningTurn)
+                {
+                    Winner = currentPlayer;
+                }
+                if (currentPlayer.Equals(PlayerOne))
+                {
+                    currentPlayer = PlayerTwo;
+                }
+                else
+                {
+                    currentPlayer = PlayerOne;
+                }
+                
+            }
+
+            Board.DisplayBoard();
+            return Winner;
 
             /*
              * Complete this method by constructing the logic for the actual playing of Tic Tac Toe. 
@@ -82,8 +108,10 @@ namespace Lab04_TicTacToe.Classes
 				string b = Board.GameBoard[p2.Row, p2.Column];
 				string c = Board.GameBoard[p3.Row, p3.Column];
 
-				// TODO:  Determine a winner has been reached. 
-				// return true if a winner has been reached. 
+                // DONE:  Determine a winner has been reached. 
+                // return true if a winner has been reached.
+
+                if (a.Equals(b) && a.Equals(c)) return true;
 			
 			}
 

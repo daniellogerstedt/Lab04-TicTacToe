@@ -16,8 +16,7 @@ namespace Lab04_TicTacToe
             // Create your players, and instantiate your Game class. 
             // output to the console the winner
 
-            Classes.Board board = new Classes.Board();
-            board.DisplayBoard();
+            
 
         }
     }
